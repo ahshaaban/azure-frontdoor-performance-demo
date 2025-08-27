@@ -27,3 +27,19 @@ If cached, the file is returned immediately (low latency).
 If not cached, Front Door fetches it from Azure Storage (origin).
 
 Response is cached at the edge for subsequent requests.
+
+🚀 Deployment Steps
+
+Go into infra/terraform/
+
+terraform init
+terraform apply -auto-approve
+
+
+Upload your website files:
+
+az storage blob upload-batch \
+  --account-name ahmedshaaban \
+  --destination '$web' \
+  --source ../../site
+
